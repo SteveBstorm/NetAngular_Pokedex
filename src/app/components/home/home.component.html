@@ -1,0 +1,18 @@
+<h3>Mon super pokedex tout moche</h3>
+<div class="content">
+  <div class="list" *ngIf="currentTwenty">
+    <ul>
+      <li *ngFor="let poke of currentTwenty.results">
+        {{poke.name}}
+        <button (click)="showExternalDetail(poke.url)">Détail sur une autre page</button>
+        <button (click)="showInputDetail(poke.url)">Détail sur la même page</button>
+      </li>
+    </ul>
+    <button *ngIf="currentTwenty.previous" (click)="loadData(currentTwenty.previous)">Précédent</button>
+    <button *ngIf="currentTwenty.next" (click)="loadData(currentTwenty.next)">Suivant</button>
+  </div>
+  <div *ngIf="selectedUrl" class="detail">
+    <app-inputdetails [url]="selectedUrl"></app-inputdetails>
+  </div>
+</div>
+

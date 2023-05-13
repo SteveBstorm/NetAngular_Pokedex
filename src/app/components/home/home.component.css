@@ -1,0 +1,11 @@
+.content {
+  display: flex;
+}
+
+.list {
+  width: 30%;
+}
+
+.detail {
+  width: fit-content;
+}
